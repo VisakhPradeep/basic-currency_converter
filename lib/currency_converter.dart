@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart'; // Import required for kDebugMode
+import 'package:flutter/foundation.dart';
 
 class CurrencyConverterMaterialPage extends StatefulWidget {
   const CurrencyConverterMaterialPage({super.key});
@@ -18,14 +18,14 @@ class _CurrencyConverterMaterialPageState
     try {
       double value = double.parse(textEditingController.text);
       setState(() {
-        result = value * 81; // Conversion rate
+        result = value * 81;
       });
     } catch (e) {
       if (kDebugMode) {
         print("Invalid input");
       }
       setState(() {
-        result = 0; // Reset result if input is invalid
+        result = 0;
       });
     }
   }
@@ -45,7 +45,7 @@ class _CurrencyConverterMaterialPageState
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'INR ${result.toStringAsFixed(2)}', // Shows result with 2 decimal places
+              'INR ${result.toStringAsFixed(2)}',
               style: const TextStyle(
                 fontSize: 45,
                 fontWeight: FontWeight.bold,
@@ -80,13 +80,13 @@ class _CurrencyConverterMaterialPageState
                     const TextInputType.numberWithOptions(decimal: true),
               ),
             ),
-            const SizedBox(height: 20), // Adds spacing before button
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: convertCurrency,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black, // Button color
-                foregroundColor: Colors.white, // Text color
-                elevation: 8, // Adds shadow effect
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
+                elevation: 8,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 shape: RoundedRectangleBorder(
